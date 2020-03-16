@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    background-color: lightgray;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wv {
+    &__container {
+        width: 800px;
+        height: 800px;
+        border: 1px solid gray;
+        background-color: #090979;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 50%;
+    }
+    &__wave {
+        border-radius: 160px 0 80px 0;
+        background: #090979;
+        background: linear-gradient(80deg, #090979 0%, #0b81f0 53%, white 100%);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+    }
+    &__curve {
+        display: inline-block;
+        border-top-left-radius: 52px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 19px;
+        background: white;
+        background: linear-gradient(212deg, white 0%, white 50%, #0b81f0 100%);
+        animation: curve 3s 0s infinite linear backwards;
+    }
+    &__ocean-strip {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        margin-top: 40px;
+    }
+}
+
+@for $i from 0 through 8 {
+    $ease: ease-out;
+    @if $i % 2 == 0 {
+        $ease: ease-in
+    }
+    .wv__wave-#{$i} {
+        animation: wave-motion 3s 0s infinite $ease;
+    }
+}
+
+@keyframes wave-motion {
+    0% {
+        opacity: 0;
+        width: 30px;
+        height: 45px;
+        transform: translate(0, 0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-20px, 10px);
+    }
+
+    100% {
+        opacity: 0;
+        width: 80px;
+        height: 80px;
+        transform: translate(40px, 40px);
+    }
+}
+
+@keyframes curve{
+    0% {
+        width: 15px;
+        height: 22px;
+    }
+
+    100% {
+        width: 30px;
+        height: 45px;
+    }
+}
