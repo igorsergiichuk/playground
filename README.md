@@ -6,3 +6,7 @@
 #### 1. Waves
 
 ![](pictures/waves.gif)
+
+#### 2. Cubes
+
+![](pictures/cubes.gif)
