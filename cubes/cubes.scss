@@ -1,0 +1,45 @@
+body {
+    background-color: black;
+}
+.cubes {
+    &__containers-container {
+        height: 400px;
+        width: 400px;
+        margin-top: calc(50vh - 200px);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__container {
+        height: 200px;
+        width: 200px;
+        position: relative;
+    }
+    &__cube {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        transition-duration: 1s;
+        &-red {
+            background-color: #FF5349;
+            border: 1px solid #C62D42;
+            box-shadow: 3px 3px 5px  #CCFF00;
+        }
+        &-yellow {
+            background-color: #FFFF66;
+            border: 1px solid #FF9933;
+            box-shadow: 3px 3px 5px #FF00CC;
+        }
+        &-green {
+            background-color: #66FF66;
+            border: 1px solid #AAF0D1;
+            box-shadow: 3px 3px 5px #FF5349;
+        }
+        &-pink {
+            background-color: #FF00CC;
+            border: 1px solid #E936A7;
+            box-shadow: 3px 3px 5px #66FF66;
+        }
+    }
+}
