@@ -9,8 +9,8 @@ body {
 }
 
 .wv__container {
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   border: 1px solid gray;
   background-color: #090979;
   overflow: hidden;

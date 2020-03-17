@@ -11,7 +11,7 @@ function deleteChild(el) {
 }
 
 function addWaves() {
-    let stripsQuantity = random(2, 5);
+    let stripsQuantity = random(3, 5);
     let container = document.querySelector(".wv__container");
     deleteChild(container);
     for (let i = 0; i < stripsQuantity; i++)  {
@@ -20,7 +20,7 @@ function addWaves() {
         if (!i) {
             strip.style.marginTop = "60px";
         }
-        let wavesQuantity = random(0, 6);
+        let wavesQuantity = random(2, 6);
         for (let i = 0; i < wavesQuantity; i++)  {
             let wave = document.createElement("span");
             wave.className = `wv__wave wv__wave-${random(3, wavesQuantity > 3 ? wavesQuantity : 4)}`;
@@ -36,6 +36,6 @@ function addWaves() {
 window.onload = function () {
     let timerId = setTimeout(function tick() {
         addWaves();
-        timerId = setTimeout(tick, 6000); // (*)
+        timerId = setTimeout(tick, 3000); // (*)
     }, 0);
 };
