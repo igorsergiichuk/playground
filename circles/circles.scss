@@ -29,6 +29,7 @@ body {
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-timing-function: ease-in-out;
     animation-delay: 0s;
     &-y {
         animation-name: revolve-y;
@@ -50,7 +51,36 @@ body {
     &-zz {
         animation-name: revolve-zz;
         box-shadow: inset 10px 0px 20px rgba(248, 212, 32, 0.8);
+    }
+    &-disappear {
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-name: disappear;
+    }
 
+    &-disappear-secondary {
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+        animation-name: disappear;
+    }
+
+    &-disappear-third {
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-delay: 2s;
+        animation-name: disappear;
+    }
+
+    &-disappear-fourth {
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-delay: 3s;
+        animation-name: disappear;
     }
 }
 
@@ -100,5 +130,27 @@ body {
 
     100% {
         transform: rotate3D(1, 0, 1, -360deg) scale(0.8);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        transform: scale(0.1, 0.1);
+        opacity: 1;
+        background: transparent;
+    }
+
+    10% {
+        background: rgba(248, 212, 32, 1);
+    }
+
+    95% {
+        opacity: 1;
+        background: transparent;
+    }
+
+    100% {
+        transform: scale(1.2, 1.2);
+        opacity: 0;
     }
 }
