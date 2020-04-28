@@ -63,27 +63,15 @@ body {
     }
 
     &-disappear-secondary {
-        animation-direction: normal;
-        animation-timing-function: linear;
-        animation-fill-mode: both;
         animation-delay: 1s;
-        animation-name: disappear;
     }
 
     &-disappear-third {
-        animation-direction: normal;
-        animation-timing-function: linear;
-        animation-fill-mode: both;
         animation-delay: 2s;
-        animation-name: disappear;
     }
 
     &-disappear-fourth {
-        animation-direction: normal;
-        animation-timing-function: linear;
-        animation-fill-mode: both;
         animation-delay: 3s;
-        animation-name: disappear;
     }
 }
 
