@@ -84,50 +84,84 @@ body {
 }
 
 .circle-planetary {
-  background: rgba(248, 212, 32, 0.5);
+  background: #b3e300;
   border-radius: 50%;
+  position: absolute;
+  z-index: 10;
 }
 .circle-planetary-center {
+  box-shadow: inset 29px 20px 20px rgba(0, 227, 48, 0.8);
   width: 80px;
   height: 80px;
-  position: absolute;
   top: 60px;
-  animation: center 4s ease-in-out 0.4s infinite normal;
+  animation: center 4s linear 0.4s infinite normal;
 }
-.circle-planetary-orbit {
+
+.orbit {
   position: absolute;
-  width: 170px;
-  height: 170px;
   border-radius: 50%;
-  animation: orbit 4s ease-in-out 0s infinite normal;
 }
-.circle-planetary-orbit-secondary {
+.orbit__revolving {
+  width: 150px;
+  height: 150px;
+  animation: orbit 3s ease-in 0s infinite normal;
+}
+.orbit__axis {
+  width: 180px;
+  height: 150px;
+  top: 80px;
+  transform: translate(0, 40px);
+  animation: orbit-axis 4s ease-in-out 0s infinite normal;
+}
+.orbit__secondary {
   animation-delay: 0.2s;
 }
-.circle-planetary-orbit-third {
+.orbit__third {
   animation-delay: 0.4s;
 }
-.circle-planetary-orbit-fourth {
+.orbit__fourth {
   animation-delay: 0.6s;
 }
-.circle-planetary-orbiter {
+.orbit__axis-secondary {
+  animation-delay: 0.2s;
+}
+.orbit__axis-third {
+  animation-delay: 0.4s;
+}
+.orbit__axis-fourth {
+  animation-delay: 0.6s;
+}
+
+.orbiter {
   width: 20px;
   height: 20px;
   top: 15px;
   left: 20px;
   position: absolute;
 }
-.circle-planetary-orbiter-primary {
+.orbiter__primary {
   background: rgba(248, 212, 32, 0.8);
 }
-.circle-planetary-orbiter-secondary {
+.orbiter__secondary {
   background: rgba(248, 212, 32, 0.6);
 }
-.circle-planetary-orbiter-third {
+.orbiter__third {
   background: rgba(248, 212, 32, 0.4);
 }
-.circle-planetary-orbiter-fourth {
+.orbiter__fourth {
   background: rgba(248, 212, 32, 0.2);
+}
+.orbiter__primary-axis {
+  background: rgba(131, 18, 231, 0.8);
+}
+.orbiter__secondary-axis {
+  background: rgba(131, 18, 231, 0.6);
+}
+.orbiter__third-axis {
+  background: rgba(131, 18, 231, 0.4);
+}
+.orbiter__fourth-axis {
+  background: rgba(131, 18, 231, 0.2);
 }
 
 @keyframes revolve-y {
@@ -193,7 +227,7 @@ body {
     transform: scale3d(1, 1, 1);
   }
   50% {
-    transform: scale3d(1.5, 1.5, 1.5);
+    transform: scale3d(1.2, 1.2, 1.2);
   }
   100% {
     transform: scale3d(1, 1, 1);
@@ -205,6 +239,33 @@ body {
   }
   100% {
     transform: rotateZ(360deg);
+  }
+}
+@keyframes orbit-axis {
+  0% {
+    transform: translate(0, 40px);
+    z-index: 20;
+  }
+  30% {
+    transform: translate(128px, -55px);
+    z-index: 20;
+  }
+  31% {
+    z-index: 0;
+  }
+  50% {
+    transform: translate(88px, -25px);
+    z-index: 0;
+  }
+  79% {
+    z-index: 0;
+  }
+  88% {
+    z-index: 20;
+  }
+  100% {
+    transform: translate(0, 40px);
+    z-index: 20;
   }
 }
 
