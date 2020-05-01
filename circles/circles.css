@@ -27,12 +27,14 @@ body {
   height: 100px;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #f8d420;
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
+}
+.circle-yellow {
+  border: 1px solid #f8d420;
 }
 .circle-y {
   animation-name: revolve-y;
@@ -121,35 +123,82 @@ body {
 }
 
 .orbiter {
-  width: 20px;
-  height: 20px;
-  top: 15px;
-  left: 20px;
+  width: 12px;
+  height: 12px;
   position: absolute;
+  background: transparent;
 }
 .orbiter__primary {
-  background: rgba(248, 212, 32, 0.8);
+  background: #7aa8a8;
 }
 .orbiter__secondary {
-  background: rgba(248, 212, 32, 0.6);
+  background: rgba(122, 168, 16, 0.8);
 }
 .orbiter__third {
-  background: rgba(248, 212, 32, 0.4);
+  background: rgba(122, 168, 16, 0.6);
 }
 .orbiter__fourth {
-  background: rgba(248, 212, 32, 0.2);
+  background: rgba(122, 168, 16, 0.4);
+}
+.orbiter__axis {
+  top: 15px;
+  left: 20px;
 }
 .orbiter__primary-axis {
-  background: rgba(131, 18, 231, 0.8);
+  background: #8312e7;
 }
 .orbiter__secondary-axis {
-  background: rgba(131, 18, 231, 0.6);
+  background: rgba(131, 18, 231, 0.8);
 }
 .orbiter__third-axis {
-  background: rgba(131, 18, 231, 0.4);
+  background: rgba(131, 18, 231, 0.6);
 }
 .orbiter__fourth-axis {
-  background: rgba(131, 18, 231, 0.2);
+  background: rgba(131, 18, 231, 0.4);
+}
+
+.circle-hollow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 10px solid #fff3b0;
+  box-shadow: inset 0 0 20px #fff3b0;
+  transform: skew(45deg, 0);
+  z-index: 10;
+}
+
+.circle-hollow__secondary {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 10px solid #588b8b;
+  box-shadow: inset 0 0 10px #588b8b;
+  animation: tremble 4s linear 0s infinite normal;
+  transform: skew(45deg, 0);
+}
+
+.circle-hollow__third {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px solid #827191;
+  box-shadow: inset 0 0 10px #827191;
+  animation: tremble-reverse 4s linear 0s infinite normal;
+  transform: skew(45deg, 0);
+}
+
+.circle-hollow__fourth {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 5px solid #d1f0b1;
+  box-shadow: inset 0 0 2px #d1f0b1;
+  animation: tremble-fourth 4s linear 0s infinite normal;
+  transform: skew(45deg, 0);
 }
 
 @keyframes revolve-y {
@@ -199,7 +248,7 @@ body {
     background: transparent;
   }
   10% {
-    background: #f8d420;
+    background: #f00577;
   }
   95% {
     opacity: 1;
@@ -254,6 +303,72 @@ body {
   100% {
     transform: translate(0, 40px);
     z-index: 20;
+  }
+}
+@keyframes tremble {
+  0% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  25% {
+    transform: translate3d(30px, -15px, 0px) skew(45deg, 0);
+    z-index: 10;
+  }
+  50% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  75% {
+    transform: translate3d(-30px, 15px, 0) skew(45deg, 0);
+    z-index: 5;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+}
+@keyframes tremble-reverse {
+  0% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  25% {
+    transform: translate3d(-60px, 30px, 0px) skew(45deg, 0);
+    z-index: 5;
+  }
+  50% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  75% {
+    transform: translate3d(60px, -30px, 0) skew(45deg, 0);
+    z-index: 15;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 15;
+  }
+}
+@keyframes tremble-fourth {
+  0% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  25% {
+    transform: translate3d(-30px, 15px, 0px) skew(45deg, 0);
+    z-index: 2;
+  }
+  50% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  75% {
+    transform: translate3d(30px, -15px, 0) skew(45deg, 0);
+    z-index: 10;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) skew(45deg, 0);
+    z-index: 10;
   }
 }
 
